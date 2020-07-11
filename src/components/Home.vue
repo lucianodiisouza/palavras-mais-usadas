@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from "electron";
 import Pill from "./Pill";
 export default {
   components: {
@@ -36,7 +37,10 @@ export default {
   },
   methods: {
     processarLegendas() {
-      console.log(this.files);
+      ipcRenderer.send("teste", "ping");
+      ipcRenderer.on("teste", (event, resp) => {
+        console.log(resp);
+      });
     }
   }
 };

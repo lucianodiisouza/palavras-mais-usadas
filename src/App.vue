@@ -4,9 +4,9 @@
       <v-toolbar-title>Palavras mais usadas</v-toolbar-title>
     </v-app-bar>
 
-    <v-main>
+    <v-content>
       <Home />
-    </v-main>
+    </v-content>
   </v-app>
 </template>
 
