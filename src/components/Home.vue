@@ -1,9 +1,21 @@
 <template>
-  <v-container fluid>
+  <v-main fluid>
+    <v-form>
+      <v-file-input
+        label="Selecione as legendas"
+        prepend-icon="mdi-message-text"
+        append-outer-icon="mdi-send"
+        outlined
+        multiple
+        chips
+        v-model="files"
+        @click:append-outer="processarLegendas"
+      ></v-file-input>
+    </v-form>
     <div class="pills">
       <Pill v-for="word in groupedWords" :key="word.name" :name="word.name" :amount="word.amount" />
     </div>
-  </v-container>
+  </v-main>
 </template>
 
 <script>
@@ -14,12 +26,18 @@ export default {
   },
   data: function() {
     return {
+      files: [],
       groupedWords: [
         { name: "you", amount: 900 },
         { name: "he", amount: 850 },
         { name: "i", amount: 1234 }
       ]
     };
+  },
+  methods: {
+    processarLegendas() {
+      console.log(this.files);
+    }
   }
 };
 </script>
