@@ -1,5 +1,6 @@
 {
   "name": "palavras-mais-usadas",
+  "title": "App VueJS + Electron",
   "version": "0.1.0",
   "private": true,
   "scripts": {
